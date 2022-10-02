@@ -3,6 +3,67 @@ import 'package:get/get.dart';
 import 'package:getx/Screen/screen_one.dart';
 import 'package:getx/Screen/screen_two.dart';
 
+import '../Local/local_controller.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    MyLocalController controllerlang = Get.put(MyLocalController());
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("HomePage".tr),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          MaterialButton(
+            onPressed: () {
+              Get.to(() => ScreenOne());
+            },
+            child: Text("Screen one".tr),
+          ),
+          MaterialButton(
+            onPressed: () {
+              Get.to(() => ScreenTwo());
+            },
+            child: Text("Screen two".tr),
+          ),
+          const SizedBox(
+            height: 100,
+          ),
+          Center(
+            child: Text(
+              "Do you want to change language".tr,
+              style: TextStyle(fontSize: 20, color: Colors.pink),
+            ),
+          ),
+          MaterialButton(
+            color: Colors.grey,
+            onPressed: () {
+              controllerlang.changeLang("en");
+            },
+            child: Text(
+              "English".tr,
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
+          ),
+          MaterialButton(
+            color: Colors.grey,
+            onPressed: () {
+              controllerlang.changeLang("ar");
+            },
+            child: Text(
+              "Arabic".tr,
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 // Get Builder update required to rebuild
 
 // class HomePage extends StatelessWidget {
@@ -126,33 +187,3 @@ import 'package:getx/Screen/screen_two.dart';
 //     );
 //   }
 // }
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Home Page"),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          MaterialButton(
-            onPressed: () {
-              Get.to(() => ScreenOne());
-            },
-            child: const Text("Screen One"),
-          ),
-          MaterialButton(
-            onPressed: () {
-              Get.to(() => ScreenTwo());
-            },
-            child: const Text("Screen Two"),
-          ),
-        ],
-      ),
-    );
-  }
-}
