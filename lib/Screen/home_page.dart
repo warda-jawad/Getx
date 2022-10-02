@@ -119,6 +119,30 @@ class HomePage extends StatelessWidget {
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
           ),
+          MaterialButton(
+            color: Colors.orange[800],
+            onPressed: () {
+              Get.bottomSheet(
+                  Container(
+                    padding: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    child: Text("BottomSheet"),
+                    height: 200,
+                  ),
+                  backgroundColor: Colors.grey,
+                  isDismissible: true,
+                  shape: const RoundedRectangleBorder(
+                      side: BorderSide(
+                    color: Colors.red,
+                  )));
+            },
+            child: const Text(
+              "Show BottomSheet",
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
+          ),
         ],
       ),
     );
