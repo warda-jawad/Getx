@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
           Center(
             child: Text(
               "Do you want to change language".tr,
-              style: TextStyle(fontSize: 20, color: Colors.pink),
+              style: TextStyle(fontSize: 20, color: Colors.orange[800]),
             ),
           ),
           MaterialButton(
@@ -56,6 +56,40 @@ class HomePage extends StatelessWidget {
             },
             child: Text(
               "Arabic".tr,
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
+          ),
+          MaterialButton(
+            color: Colors.orange[800],
+            onPressed: () {
+              Get.defaultDialog(
+                  title: "Success",
+                  content: Column(
+                    children: [Text("Enter Username"), TextFormField()],
+                  ),
+                  titleStyle: TextStyle(color: Colors.orangeAccent),
+                  actions: [
+                    MaterialButton(
+                      onPressed: () {},
+                      child: Text("OK"),
+                    ),
+                    MaterialButton(
+                      onPressed: () {},
+                      child: Text("Cancel"),
+                    ),
+                  ]
+                  // textCancel: "Cancel",
+                  // textConfirm: "Confirm",
+                  // onConfirm: () {
+                  //   print("Confirm");
+                  // },
+                  // onCancel: () {
+                  //   print("Cancel");
+                  // }
+                  );
+            },
+            child: Text(
+              "Show Dialog",
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
           ),
