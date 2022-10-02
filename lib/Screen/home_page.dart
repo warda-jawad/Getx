@@ -93,6 +93,32 @@ class HomePage extends StatelessWidget {
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
           ),
+          MaterialButton(
+            color: Colors.orange[800],
+            onPressed: () {
+              Get.snackbar("title snackbar", "How are you? ",
+                  backgroundColor: Colors.red,
+                  colorText: Colors.white,
+                  borderColor: Colors.black,
+                  borderRadius: 20,
+                  titleText: const Text(
+                    "title",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                  messageText: const Text(
+                    "Message Override ",
+                    style: TextStyle(color: Colors.white, fontSize: 22),
+                  ),
+                  borderWidth: 2);
+            },
+            child: const Text(
+              "Show Snackbar",
+              style: TextStyle(fontSize: 20, color: Colors.white),
+            ),
+          ),
         ],
       ),
     );
